@@ -1,59 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shivani Kotian - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <nav>
-        <div class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+  <div id="particles-js"></div>
 
-    <section id="home">
-        <div class="hero">
-            <h1>Shivani Kotian</h1>
-            <p>Data Scientist</p>
+  <div class="main-container">
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <img src="assets/headshot.jpeg" alt="Shivani Kotian" class="profile-photo">
+      <h1>Shivani Kotian</h1>
+      <div class="typing-container">
+        <span>I am a</span>
+        <span id="typing-text"></span>
+        <span class="cursor">&nbsp;</span>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/shivani-kotian/" class="social-icon" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/kotianshivani" class="social-icon" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:shivanikotian.work@gmail.com" class="social-icon" title="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <button class="nav-button" onclick="showSection('education')">Education</button>
+        <button class="nav-button" onclick="showSection('experience')">Professional Experience</button>
+        <button class="nav-button" onclick="showSection('projects')">Projects</button>
+        <button class="nav-button" onclick="showSection('skills')">Skills</button>
+      </div>
+
+      <div class="resume-button-container">
+        <a href="assets/resume.pdf" class="resume-button" download>
+          <i class="fas fa-download download-icon"></i>
+          Download Resume
+        </a>
+      </div>
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="content-section" style="display: none;">
+      <h2 class="section-title">Education</h2>
+      <div class="education-card">
+        <div class="education-item">
+          <h3>California State University</h3>
+          <p class="degree">Master of Science in Computer Science</p>
+          <p class="date">Jan 2023 - Dec 2024</p>
+          <p class="gpa">GPA: 3.93/4.0</p>
+          <div class="publication">
+            <h4>Publication</h4>
+            <p class="pub-title">A Hybrid Pub/Sub and REST-based Communication Strategy for Intelligent IoT System Interoperability</p>
+            <p class="pub-authors">Shivani M Kotian, Manveen Kaur, Youssef Elzein, Andres Dominguez, Jung Soo Lim, Navid Amini</p>
+            <p class="pub-venue">IEEE CCNC 2025 - IoT Interoperability and the Web of Things (IIWOT) Workshop</p>
+            <a href="https://ccnc2025.ieee-ccnc.org/workshop/ws-6-iot-interoperability-and-web-things-iiwot/program" class="pub-link" target="_blank">View Publication</a>
+          </div>
         </div>
+
+        <div class="education-item">
+          <h3>PES University</h3>
+          <p class="degree">Bachelor of Engineering in Computer Science</p>
+          <p class="date">Aug 2016 - Sept 2020</p>
+          <p class="gpa">GPA: 3.64/4.0</p>
+          <div class="publication">
+            <h4>Publication</h4>
+            <p class="pub-title">Epigraphiology: A Hybrid Approach for Measuring and Analyzing Influence Diffusion in Article Networks</p>
+            <p class="pub-authors">Sudeepa Roy Dey, Shivani Kotian, Anmol Agarwal, Arshika Lalan, Gambhire Swati Sampatrao, Snehanshu Saha</p>
+            <p class="pub-venue">Journal of Scientometric Research</p>
+            <a href="https://jscires.org/article/7434/" class="pub-link" target="_blank">View Publication</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <img src="headshot.jpg" alt="Your Photo">
-            <p>Your professional summary here</p>
+    <!-- Experience Section -->
+    <section id="experience" class="content-section" style="display: none;">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="experience-card">
+        <div class="experience-item">
+          <img src="assets/csula-logo.png" alt="CSULA" class="company-logo">
+          <div class="experience-content">
+            <h3>Graduate Research Assistant - California State University</h3>
+            <p class="date">Jun 2023 - Dec 2024</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
         </div>
+
+        <div class="experience-item">
+          <img src="assets/ey-logo.png" alt="EY" class="company-logo">
+          <div class="experience-content">
+            <h3>Data Scientist - Ernst & Young</h3>
+            <p class="date">Oct 2020 - Jan 2023</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <!-- Add your skills with icons -->
+    <!-- Projects Section -->
+    <section id="projects" class="content-section" style="display: none;">
+      <h2 class="section-title">Data Science Projects & Contributions</h2>
+      
+      <div class="projects-grid">
+        <!-- CodeSage Project -->
+        <div class="project-category">
+          <h3>CodeSage</h3>
+          <div class="project-card">
+            <h4>Multi-Modal Question-Answering System</h4>
+            <p>Developing a multi-modal question-answering system using RAG to extract insights from software engineering textbooks.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/kotianshivani/codesage" class="read-more" target="_blank">Read More</a>
+              <a href="https://kotianshivani.github.io/codesage" class="view-project" target="_blank">View Project</a>
+            </div>
+          </div>
         </div>
+
+        <!-- CerebroVision Project -->
+        <div class="project-category">
+          <h3>CerebroVision</h3>
+          <div class="project-card">
+            <h4>Advanced CNN Diagnostics</h4>
+            <p>Employed transfer learning with ResNet50, VGG19 for brain tumor classification, achieving 99.88% accuracy.</p>
+            <div class="project-buttons">
+              <a href="https://docs.google.com/presentation/d/1R79id5e3GOwiVudXWXknPhD21jZZYHuJ/edit?usp=sharing&ouid=102655066387499413099&rtpof=true&sd=true" class="read-more" target="_blank">Read More</a>
+              <a href="https://github.com/kotianshivani/CerebroVision" class="view-project" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decoding Dreams Project -->
+        <div class="project-category">
+          <h3>Decoding Dreams</h3>
+          <div class="project-card">
+            <h4>Sleep Efficiency Analysis</h4>
+            <p>Analyzed sleep efficiency datasets to explore affecting factors using data visualization techniques.</p>
+            <div class="project-buttons">
+              <a href="https://github.com/kotianshivani/DecodingDreams" class="read-more" target="_blank">Read More</a>
+              <a href="https://public.tableau.com/views/DecodingDreamsAData-DrivenDiveintoSleepEfficiency/All-In-OneDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" class="view-project" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <!-- Add your projects -->
+    <!-- Skills Section -->
+    <section id="skills" class="content-section" style="display: none;">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <div class="skills-category">
+                <h3>Programming Languages</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag python">Python</span>
+                    <span class="skill-tag r">R</span>
+                    <span class="skill-tag sql">SQL</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Big Data & Cloud Platforms</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag hadoop">Hadoop</span>
+                    <span class="skill-tag spark">Spark</span>
+                    <span class="skill-tag kafka">Kafka</span>
+                    <span class="skill-tag azure">Microsoft Azure</span>
+                    <span class="skill-tag databricks">Databricks</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Data Visualization</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag matplotlib">Matplotlib</span>
+                    <span class="skill-tag seaborn">Seaborn</span>
+                    <span class="skill-tag excel">Excel</span>
+                    <span class="skill-tag tableau">Tableau</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Machine Learning Frameworks</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag sklearn">scikit-learn</span>
+                    <span class="skill-tag pytorch">PyTorch</span>
+                    <span class="skill-tag keras">Keras</span>
+                    <span class="skill-tag tensorflow">TensorFlow</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>ML/NLP Techniques</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag nlp">NLP</span>
+                    <span class="skill-tag llm">LLM</span>
+                    <span class="skill-tag regression">Regression</span>
+                    <span class="skill-tag classification">Classification</span>
+                    <span class="skill-tag clustering">Clustering</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Statistical & Testing Methods</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag stats">Descriptive/Inferential Statistics</span>
+                    <span class="skill-tag time-series">Time Series Analysis</span>
+                    <span class="skill-tag analysis">Univariate/Multivariate Analysis</span>
+                    <span class="skill-tag modeling">Predictive Modeling</span>
+                    <span class="skill-tag ab">A/B Testing</span>
+                    <span class="skill-tag hypothesis">Hypothesis Testing</span>
+                    <span class="skill-tag bayesian">Bayesian Testing</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Languages</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag english">English</span>
+                    <span class="skill-tag hindi">Hindi</span>
+                </div>
+            </div>
         </div>
     </section>
+  </div>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="social-links">
-            <!-- Add your social media links -->
-        </div>
-    </section>
+  <!-- Scripts -->
+  <script src="particles.js-master/particles.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    // Typing Animation
+    const typedTextSpan = document.querySelector("#typing-text");
+    const cursor = document.querySelector(".cursor");
+    const words = ["Data Scientist", "ML Engineer", "Researcher", "Developer","Problem Solver"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let isEnd = false;
 
-    <script src="js/script.js"></script>
+    function type() {
+        isEnd = false;
+        const currentWord = words[wordIndex];
+        
+        if (isDeleting) {
+            typedTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            isEnd = true;
+            isDeleting = true;
+            setTimeout(type, 2000); // Wait at end of word
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, 500); // Wait before typing next word
+        } else {
+            setTimeout(type, isDeleting ? 100 : 200); // Delete faster than type
+        }
+    }
+
+    // Start the typing animation when page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(type, 1000);
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        particlesJS('particles-js',
+          {
+            "particles": {
+              "number": {
+                "value": 80,
+                "density": {
+                  "enable": true,
+                  "value_area": 800
+                }
+              },
+              "color": {
+                "value": "#ffffff"
+              },
+              "shape": {
+                "type": "circle",
+                "stroke": {
+                  "width": 0,
+                  "color": "#000000"
+                },
+              },
+              "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                  "enable": false,
+                  "speed": 1,
+                  "opacity_min": 0.1,
+                  "sync": false
+                }
+              },
+              "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                  "enable": false,
+                  "speed": 40,
+                  "size_min": 0.1,
+                  "sync": false
+                }
+              },
+              "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+              },
+              "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                  "enable": false,
+                  "rotateX": 600,
+                  "rotateY": 1200
+                }
+              }
+            },
+            "interactivity": {
+              "detect_on": "window",
+              "events": {
+                "onhover": {
+                  "enable": true,
+                  "mode": "repulse"
+                },
+                "onclick": {
+                  "enable": true,
+                  "mode": "push"
+                },
+                "resize": true
+              },
+              "modes": {
+                "repulse": {
+                  "distance": 200,
+                  "duration": 0.4
+                },
+                "push": {
+                  "particles_nb": 4
+                }
+              }
+            },
+            "retina_detect": true
+          }
+        );
+    });
+  </script>
 </body>
 </html>
