@@ -100,14 +100,14 @@ body {
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
-    border: 4px solid white;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation Buttons and Content Layout */
@@ -322,41 +322,51 @@ body {
 
 /* Experience Section */
 .experience-item {
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
+    background: white;
     padding: 20px;
+    border-radius: 8px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
+    transition: all 0.3s ease;
 }
 
 .experience-content {
-    margin-left: 20px;
+    flex: 1;
 }
 
-.experience-content h3 {
-    color: #003366;  /* Dark blue for better visibility */
-    margin-bottom: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
+.experience-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin: 10px 0;
 }
 
-.experience-content .date {
-    color: #1A5F7A;  /* Darker blue-green for the date */
-    font-size: 0.9em;
-    margin-bottom: 10px;
+.experience-details ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333;
 }
 
-.experience-content .read-more {
-    color: #003366;  /* Dark blue for the read more link */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+.experience-details li {
+    margin-bottom: 8px;
 }
 
-.experience-content .read-more:hover {
-    color: #1A5F7A;  /* Blue-green on hover */
+.read-more-btn {
+    background: #003366;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: #004d99;
+}
+
+/* Add this class when details are expanded */
+.experience-details.expanded {
+    max-height: 500px; /* Adjust based on content */
 }
 
 .company-logo {
@@ -400,6 +410,13 @@ body {
 
 .experience-content {
     flex: 1;
+}
+
+.experience-content h3 {
+    color: #003366;  /* Dark blue color */
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .read-more {

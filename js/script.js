@@ -29,4 +29,25 @@ function showSection(sectionId) {
     selectedSection.style.display = 'block';
     selectedSection.classList.add('active');
     selectedButton.classList.add('active');
-} 
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Close all other expanded sections
+            document.querySelectorAll('.experience-details.expanded').forEach(detail => {
+                if (detail !== this.previousElementSibling) {
+                    detail.classList.remove('expanded');
+                    detail.nextElementSibling.textContent = 'Read More';
+                }
+            });
+            
+            // Toggle current section
+            const details = this.previousElementSibling;
+            details.classList.toggle('expanded');
+            this.textContent = details.classList.contains('expanded') ? 'Read Less' : 'Read More';
+        });
+    });
+}); 
